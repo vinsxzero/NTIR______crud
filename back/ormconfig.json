@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "",
+  "database": "ntirapi",
+  "entities": ["src/entities/**/*.ts"],
+  "synchronize": true,
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true
+}

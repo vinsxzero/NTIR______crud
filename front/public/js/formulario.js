@@ -1,0 +1,87 @@
+// const form = document.querySelector("form");
+
+// form.addEventListener("submit", async function (e) {
+// //   console.log("deu certo");
+// //   e.preventDefault();
+
+// //   const formData = new FormData(form);
+// //   const aplicacaoData = new FormData(document.getElementById("aplicacaoForm"));
+// //   aplicacaoData.forEach((value, key) => {
+// //     formData.append(key, value);
+// //   });
+// //   const data = Object.fromEntries(formData.entries());
+
+// //   if (!data) {
+// //     alert("Preencha o campo");
+// //     return;
+// //   }
+// //   if (
+// //     document.querySelector("input[name='classe']:checked").value === "outro"
+// //   ) {
+// //     const outroValor = document.getElementById("outroclasse").value.trim();
+// //     if (!outroValor) {
+// //       alert("Preencha o campo 'Outro Conselho de Classe'");
+// //       return;
+// //     }
+// //     data.classe = outroValor;
+// //   }
+// //   if (
+// //     document.querySelector("input[name='medicamento']:checked").value ===
+// //     "outro"
+// //   ) {
+// //     data.medicamento = document.getElementById("outroMedicamento").value;
+// //   }
+// //   if (
+// //     document.querySelector("input[name='doencasassociadas']:checked").value ===
+// //     "outro"
+// //   ) {
+// //     data.doencasassociadas = document.getElementById("outraDoenca").value;
+// //   }
+// //   if (
+// //     document.querySelector("input[name='volumeConstituicao']:checked").value ===
+// //     "outro"
+// //   ) {
+// //     data.volumeConstituicao = document.getElementById("outroVolume").value;
+// //   }
+// //   if (
+// //     document.querySelector("input[name='diluenteUtilizado']:checked").value ===
+// //     "outro"
+// //   ) {
+// //     data.diluenteUtilizado = document.getElementById("outroDiluente").value;
+// //   }
+
+// //   data.indicacao = formData.getAll("indicacao");
+// //   data.aplicacao = formData.getAll("aplicacao");
+// //   if (data.indicacao.includes("outro")) {
+// //     const outroValor = document.getElementById("otherindicacao").value;
+
+// //     if (outroValor) {
+// //       data.indicacao = data.indicacao.filter((item) => item !== "outro");
+// //       data.indicacao.push(outroValor);
+// //     }
+// //   }
+
+// //   data.administracao = formData.getAll("administracao");
+// //   if (data.administracao.includes("outro")) {
+// //     const outroValor = document.getElementById("otherAdminRoute").value;
+
+// //     if (outroValor) {
+// //       data.administracao = data.administracao.filter(
+// //         (item) => item !== "outro",
+// //       );
+// //       data.administracao.push(outroValor);
+// //     }
+// //   }
+// //   console.log("OBJ FINAL:", data);
+// //   console.log("ANTES DO POST");
+// //   try {
+// //     await axios.post("http://localhost:3000/submit-form", data);
+// //     alert("Feito");
+// //     form.reset();
+// //     return data;
+// //   } catch (error) {
+// //     console.error(error);
+// //     alert("Erro");
+// //     console.log(data);
+// //   }
+// // });

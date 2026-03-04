@@ -1,0 +1,285 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-color: rgb(202, 210, 216);
+  display: flex;
+  justify-content: center;
+}
+textarea {
+  font-family: inherit;
+  font-size: large;
+  resize: vertical;
+}
+.logo {
+  width: 130px;
+  height: auto;
+  margin: 20px;
+}
+hr {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: lightgray;
+}
+
+.form {
+  background-color: white;
+  width: 700px;
+  padding: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#form-title {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+.header {
+  display: flex;
+  width: 600px;
+  align-items: center;
+  flex-direction: column;
+}
+.description {
+  text-align: center;
+  font-size: 15px;
+  line-height: 2.5;
+}
+
+.professional-data {
+  width: 100%;
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* duas colunas */
+  gap: 20px;
+  max-width: 800px;
+}
+.input-group * {
+  margin: 5px;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.full {
+  grid-column: span 2; /* ocupa duas colunas */
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 20px;
+}
+
+.options .full {
+  grid-column: span 2;
+}
+
+input,
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.row-phones {
+  display: grid;
+  grid-template-columns: 2fr;
+  gap: 8px;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.input-title {
+  grid-column: span 2;
+  margin-bottom: 0;
+}
+.input-description {
+  color: #929292;
+  font-size: smaller;
+}
+form hr {
+  grid-column: span 2;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* 🔹 força a tabela a respeitar o tamanho do container */
+}
+table input {
+  border: 0px;
+}
+table select {
+  border: 0px;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 4px 6px; /* 🔹 linhas mais compactas */
+  font-size: 13px;
+}
+
+th {
+  background-color: #f5f7ff;
+  font-weight: 600;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 3px 5px;
+  font-size: 13px;
+  border: 1px solid rgb(53, 66, 73);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label input {
+  margin: 0;
+  width: 50px;
+}
+caption {
+  caption-side: top;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* 🔹 Mantém tudo dentro do grid */
+.grid-item {
+  overflow: hidden;
+}
+
+.base-app-container {
+  display: flex;
+  position: relative;
+}
+.base-app-container img {
+  width: 700px;
+  height: 393px;
+}
+.base-app-container .muscle-btn {
+  position: absolute;
+  padding: 0px;
+  margin-top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  /* opacity: 0; */
+  cursor: pointer;
+}
+#one {
+  top: 80px;
+  left: 90px;
+}
+#two {
+  top: 80px;
+  left: 210px;
+}
+#three {
+  top: 125px;
+  left: 120px;
+}
+#four {
+  top: 125px;
+  left: 185px;
+}
+#five {
+  top: 140px;
+  left: 152px;
+}
+#six {
+  top: 160px;
+  left: 60px;
+}
+#seven {
+  top: 160px;
+  left: 250px;
+}
+#eight {
+  top: 180px;
+  left: 155px;
+}
+#nine {
+  top: 245px;
+  left: 60px;
+}
+#ten {
+  top: 245px;
+  left: 250px;
+}
+#eleven {
+  top: 255px;
+  left: 155px;
+}
+#twelve {
+  top: 295px;
+  left: 75px;
+}
+#thirteen {
+  top: 295px;
+  left: 230px;
+}
+#fourteen {
+  top: 320px;
+  left: 100px;
+}
+#fifteen {
+  top: 320px;
+  left: 205px;
+}
+#sixteen {
+  top: 335px;
+  left: 130px;
+}
+#seventeen {
+  top: 335px;
+  left: 175px;
+}
+.muscle-name {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.trash {
+  background-color: transparent;
+  color: black;
+  font-size: 26px;
+}
+input[type="text"] {
+  font-family: inherit;
+}
+@media (max-width: 750px) {
+  .form div {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .input-group {
+    grid-column: span 2;
+  }
+}

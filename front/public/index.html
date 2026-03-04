@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>RELATO DE SUSPEITA DE INEFETIVIDADE TERAPÊUTICA - NABOTA</title>
+  </head>
+  <body>
+    <div class="form">
+      <div class="header">
+        <img src="./images/logo.png" class="logo" />
+        <h1 id="form-title">
+          Relato de Suspeita de Inefetividade Terapêutica NABOTA® (toxina
+          botulínica A)
+        </h1>
+        <hr />
+        <p class="description" id="form-description">
+          Atenção: <u>Todos os campos devem ser preenchidos</u>. Formulários
+          incompletos ou preenchidos de forma incorreta não serão encaminhados
+          para avaliação. <br />
+          Todas as informações fornecidas através deste formulário são
+          confidenciais e ficam restritas às áreas técnicas da moksha8.
+        </p>
+      </div>
+      <hr />
+      <form action="/submit-form" method="post">
+        >
+        <h2 class="input-title">Dados do profissional</h2>
+        <hr />
+
+        <div class="input-group">
+          <label>Nome *</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
+        <div class="input-group">
+          <label>E-mail *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="exemplo@exemplo.com"
+          />
+        </div>
+
+        <div class="input-group full">
+          <label>Profissão/especialidade *</label>
+          <input type="text" id="especialidade" name="especialidade" required />
+        </div>
+
+        <div class="input-group">
+          <label>Conselho de classe *</label>
+          <div class="options">
+            <label>
+              <input type="radio" name="classe" value="CRM" />
+              CRM
+            </label>
+            <label>
+              <input type="radio" name="classe" value="CRBM" />
+              CRBM
+            </label>
+            <label>
+              <input type="radio" name="classe" value="CRO" />
+              CRO
+            </label>
+            <label>
+              <input type="radio" name="classe" value="CRF" />
+              CRF
+            </label>
+            <label>
+              <input type="radio" name="classe" value="COREN" />
+              COREN
+            </label>
+            <label>
+              <input type="radio" name="classe" value="COFFITO" />
+              COFFITO
+            </label>
+            <label class="full">
+              <input type="radio" name="classe" value="outro" />
+              Outro
+            </label>
+            <label class="full">
+              <input
+                class="full"
+                type="text"
+                id="outroclasse"
+                style="display: none; width: 70%; font-family: inherit"
+                placeholder="Por favor, insira outra opção aqui"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Nº do conselho (com UF) *</label>
+          <input type="text" id="conselhonum" name="conselhonum" required />
+        </div>
+
+        <div class="input-group">
+          <label>Telefone clínica/consultório *</label>
+          <div class="row-phones">
+            <input
+              type="text"
+              placeholder="Telefone"
+              id="telclinica"
+              name="telclinica"
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Telefone celular *</label>
+          <div class="row-phones">
+            <input
+              type="text"
+              placeholder="Telefone"
+              id="celular"
+              name="celular"
+            />
+          </div>
+        </div>
+
+        <div class="input-group full">
+          <label>Autoriza contato posterior da empresa? *</label>
+          <label
+            ><input type="radio" name="contatoposterior" value="Sim" />
+            Sim</label
+          >
+          <label
+            ><input type="radio" name="contatoposterior" value="Não" />
+            Não</label
+          >
+        </div>
+
+        <h2 class="input-title">Dados do paciente</h2>
+        <hr />
+        <div class="input-group">
+          <label>Iniciais </label>
+          <input type="text" id="iniciais" name="iniciais" />
+        </div>
+        <div class="input-group">
+          <label> Data de nascimento </label>
+          <input type="date" id="birthdate" name="birthdate" />
+        </div>
+
+        <div class="input-group full">
+          <label>Sexo:</label>
+          <select id="sexo" name="sex">
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+          </select>
+          <div class="options">
+            <label>Está gestante?</label>
+            <label class="full" style="display: flex">
+              <input type="radio" name="pregnant" value="yes" />Sim
+              <input type="radio" name="pregnant" value="no" />Não
+              <input type="radio" name="pregnant" value="n/a" />N/A
+            </label>
+          </div>
+        </div>
+        <div class="input-group full">
+          <label>
+            Paciente utilizou medicamentos e/ou vacinas concomitantes? Se sim,
+            informar marca e/ou substância ativa, data de início, data de
+            término, indicação e posologia.
+          </label>
+          <label>
+            <input type="radio" name="medicamento" value="n/i" />
+            Não informado
+          </label>
+          <label>
+            <input type="radio" name="medicamento" value="nao" />
+            Não
+          </label>
+          <label>
+            <input type="radio" name="medicamento" value="sim" />
+            Sim
+          </label>
+
+          <input
+            type="text"
+            id="outroMedicamento"
+            style="width: 70%; display: none"
+            placeholder="Por favor, digite o medicamento aqui."
+          />
+        </div>
+        <div class="input-group full">
+          <label> Paciente possui doenças associadas? </label>
+          <label>
+            <input type="radio" name="doencasassociadas" value="ni" />
+            Não informado
+          </label>
+          <label>
+            <input type="radio" name="doencasassociadas" value="nao" />
+            Não
+          </label>
+          <label>
+            <input type="radio" name="doencasassociadas" value="sim" />
+            Sim
+          </label>
+          <input
+            type="text"
+            id="outraDoenca"
+            style="width: 70%; display: none"
+            placeholder="Por favor, digite a doença aqui."
+          />
+        </div>
+        <div class="input-group full">
+          <label>
+            Foi realizado algum outro procedimento no mesmo dia da aplicação?
+            (Ex: ácido hialurônico, peeling, fios de sustentação, etc). Se sim,
+            por gentileza especificar quais:
+          </label>
+          <textarea
+            style="padding-bottom: 100px"
+            id="outrosprocedimentos"
+            name="outrosprocedimentos"
+          ></textarea>
+        </div>
+        <hr />
+        <h2 class="input-title">
+          Condições de armazenamento e preparo do produto
+        </h2>
+        <hr />
+        <div class="input-group">
+          <label>Numero do lote *</label>
+          <input
+            type="text"
+            id="lote"
+            name="lote"
+            style="margin-top: 25px"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label>Produto adquirido de qual distribuidor? *</label>
+          <input type="text" id="distribuidor" name="distribuidor" required />
+        </div>
+        <div class="input-group">
+          <label>Data de entrega *</label>
+          <input type="date" name="entrega" id="entrega" />
+        </div>
+        <br />
+        <div class="input-group">
+          <label>
+            Condições de armazenamento do produto no momento da entrega*
+          </label>
+          <input type="text" id="condicaoEntrega" name="condicaoEntrega" />
+          <p class="input-description">
+            (inserir temperatura medida ou ausência de medição)
+          </p>
+        </div>
+        <div class="input-group">
+          <label>
+            Condições de armazenamento do produto na sua clínica/consultório*
+          </label>
+          <input
+            type="input"
+            name="condicaoConsultorio"
+            id="condicaoConsultorio"
+          />
+          <p class="input-description">
+            (Informar a temperatura medida ou ausência de
+            medição)(Imprescindível informar a temperatura)
+          </p>
+        </div>
+        <div class="input-group">
+          <label>Volume da constituição</label>
+          <label
+            ><input
+              type="radio"
+              name="volumeConstituicao"
+              value="1mL"
+            />1mL</label
+          >
+          <label style="grid-column-start: 2; grid-column-end: 2">
+            <input type="radio" name="volumeConstituicao" value="2,5ml" />
+            2,5mL
+          </label>
+
+          <label
+            ><input
+              type="radio"
+              name="volumeConstituicao"
+              value="2mL"
+            />2mL</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="volumeConstituicao"
+              value="4mL"
+            />4mL</label
+          >
+        </div>
+        <div style="margin-top: -20px" class="input-group full">
+          <label
+            ><input
+              value="outro"
+              type="radio"
+              name="volumeConstituicao"
+            />Outro:</label
+          >
+          <input
+            type="text"
+            id="outroVolume"
+            style="display: none"
+            placeholder="Insira o volume aqui"
+          />
+        </div>
+        <div class="input-group">
+          <label>Data e hora da diluição</label>
+          <input
+            type="datetime-local"
+            name="dataHoraDiluicao"
+            id="dataHoraDiluicao"
+          />
+          <p class="input-description">(Imprescindível informar o horário)</p>
+        </div>
+        <div class="input-group">
+          <label>Data e hora da aplicação</label>
+          <input
+            type="datetime-local"
+            name="dataHoraAplicacao"
+            id="dataHoraAplicacao"
+          />
+          <p class="input-description">(Imprescindível informar o horário)</p>
+        </div>
+        <div class="input-group">
+          <label> Diluente utilizado </label>
+          <label
+            ><input
+              type="radio"
+              name="diluenteUtilizado"
+              value="Soro fisiológico estéril"
+            />Soro fisiológico estéril
+          </label>
+          <label
+            ><input
+              type="radio"
+              name="diluenteUtilizado"
+              value="Soro fisiológico"
+            />Soro fisiológico</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="diluenteUtilizado"
+              value="outro"
+            />Outro</label
+          >
+          <input
+            type="text"
+            id="outroDiluente"
+            style="display: none"
+            placeholder="Insira o tipo de diluente"
+          />
+        </div>
+        <div class="input-group">
+          <label>Validade do diluente</label>
+          <input type="date" name="validadeDiluente" id="validadeDiluente" />
+          <p class="input-description">(Imprescindível informar o horário)</p>
+        </div>
+        <div class="input-group">
+          <label>Este frasco foi utilizado em outro paciente?</label>
+          <label
+            ><input type="radio" name="foiUsadoAntes" value="sim" />Sim</label
+          >
+          <label
+            ><input type="radio" name="foiUsadoAntes" value="nao" />Não</label
+          >
+        </div>
+        <div class="input-group">
+          <label
+            >Se sim, houve queixa de ineficácia terapêutica pelo outro
+            paciente?</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="queixa"
+              id="queixa"
+              value="sim"
+            />Sim</label
+          >
+          <label
+            ><input type="radio" name="queixa" id="" value="nao" />Não</label
+          >
+          <label
+            ><input type="radio" name="queixa" id="" value="n/a" />Não se
+            aplica</label
+          >
+        </div>
+        <hr />
+        <h2 class="input-title">Administração do produto</h2>
+        <hr />
+        <div class="input-group">
+          <label>Indicação (motivo de uso)</label>
+          <label>
+            <input
+              type="checkbox"
+              style="padding: 5px"
+              name="indicacao"
+              value="estetica"
+            />Estética</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="indicacao"
+              value="terapeutica"
+            />Terapêutica</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="indicacao"
+              value="outro"
+            />Outro:</label
+          >
+          <input
+            type="text"
+            id="otherindicacao"
+            style="display: none"
+            placeholder="Insira o tipo de indicação"
+          />
+        </div>
+        <div class="input-group">
+          <label>Via de Administração</label>
+          <label
+            ><input
+              type="checkbox"
+              name="administracao"
+              value="intramuscular"
+            />Intramuscular</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="administracao"
+              value="subcutanea"
+            />Subcutânea</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="administracao"
+              value="intradermica"
+            />Intradérmica</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="administracao"
+              value="topica"
+            />Tópica</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="administracao"
+              value="outro"
+            />Outra:</label
+          >
+          <input
+            type="text"
+            id="otherAdminRoute"
+            style="display: none"
+            placeholder="Insira outra via de administracao"
+          />
+        </div>
+        <div class="input-group">
+          <label>Como foi realizada assepsia do local de aplicação? *</label>
+          <input type="text" id="assepsia" name="assepsia" />
+        </div>
+        <div class="input-group">
+          <label>Foi utilizado anestésico local? Se sim, especificar: *</label>
+          <input type="text" id="anestesia" name="anestesia" />
+        </div>
+
+        <div class="full">
+          <p>
+            De acordo com os músculos descritos na imagem abaixo, por gentileza
+            preencher a tabela a seguir as informações referentes a todos os
+            músculos onde foram realizadas aplicações.
+            <strong>
+              Atenção para os campos de
+              <u> volume</u>
+              , que devem ser preenchidos em
+              <u> ml </u>
+              .</strong
+            >
+          </p>
+          <div class="base-app-container">
+            <img src="./images/base-aplicação.png" alt="" />
+            <button type="button" class="muscle-btn" data-muscle="1" id="one">
+              1
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="2" id="two">
+              2
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="3" id="three">
+              3
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="4" id="four">
+              4
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="5" id="five">
+              5
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="6" id="six">
+              6
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="7" id="seven">
+              7
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="8" id="eight">
+              8
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="9" id="nine">
+              9
+            </button>
+            <button type="button" class="muscle-btn" data-muscle="10" id="ten">
+              10
+            </button>
+            <button
+              type="button"
+              class="muscle-btn"
+              data-muscle="11"
+              id="eleven"
+            >
+              11
+            </button>
+            <button
+              type="button"
+              class="muscle-btn"
+              data-muscle="12"
+              id="twelve"
+            >
+              12
+            </button>
+            <button
+              type="button"
+              class="muscle-btn"
+              data-muscle="13"
+              id="thirteen"
+            >
+              13
+            </button>
+            <button
+              type="button"
+              class="muscle-btn"
+              data-muscle="14"
+              id="fourteen"
+            >
+              14
+            </button>
+            <button
+              type="button"
+              class="muscle-btn"
+              data-muscle="15"
+              id="fifteen"
+            >
+              15
+            </button>
+            <button
+              type="button"
+              class="muscle-btn"
+              data-muscle="16"
+              id="sixteen"
+            >
+              16
+            </button>
+            <button
+              type="button"
+              class="muscle-btn"
+              data-muscle="17"
+              id="seventeen"
+            >
+              17
+            </button>
+          </div>
+        </div>
+        <div class="grid-item full" id="applicationForm">
+          <div class="table-container">
+            <table>
+              <caption>
+                *Preencha apenas as regiões em que foram realizadas aplicações*
+              </caption>
+              <thead>
+                <tr>
+                  <th>Região</th>
+                  <th>Gravidade da indicação</th>
+                  <th>Número de pontos</th>
+                  <th>Volume por ponto (ml)</th>
+                  <th>Volume total (ml)</th>
+                  <th>Número de unidades (U)</th>
+                  <th>Houve paralisia da musculatura?</th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="input-group full">
+          <button type="submit" id="submit-form">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <script src="./functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/formulario.js"></script>
+    <script src="/js/aplicacao.js"></script>
+  </body>
+</html>
