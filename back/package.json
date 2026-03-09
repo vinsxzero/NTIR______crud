@@ -27,5 +27,8 @@
     "dev": "ts-node-dev src/server.ts",
     "start": "nodemon src/index.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "description": ""
 }

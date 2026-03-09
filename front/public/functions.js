@@ -20,7 +20,7 @@ const muscleMap = {
 };
 
 //adicionando linhas na tabela
-const tableBody = document.getElementById("table-body");
+const tableBody = document.getElementById("tableBody");
 
 document.querySelectorAll(".muscle-btn").forEach((button) => {
   button.addEventListener("click", () => addRow(button));
@@ -241,49 +241,16 @@ adminRouteCheckbox.forEach((checkbox) => {
 });
 const form = document.querySelector("#formularioEntries");
 const table = document.querySelector("#applicationForm");
-async function addApplication(e) {
-  alert("deu certo");
-  e.preventDefault();
-  const appData = Object.fromEntries(new FormData(table).entries());
-  const data = Object.fromEntries(appData.entries());
-  const name = table.querySelector(".muscle-name");
-  if (data) {
-    alert("escolha uma regiao");
-  }
-  data.regiao = name.textContent.trim();
-  data.gravidadeInfeccao = document.querySelector(
-    "select[name='gravidadeInfeccao']",
-  ).value;
-  data.numeroDePontos = document.querySelector(
-    "input[name='numeroDePontos']",
-  ).value;
-  data.volumePorPonto = document.querySelector(
-    "input[name='volumePorPonto']",
-  ).value;
-  data.volumeTotal = document.querySelector("input[name='volumeTotal']").value;
-  data.unidades = document.querySelector("input[name='unidades']").value;
-  data.paralisia = document.querySelector("select[name='paralisia']").value;
-  try {
-    alert("Feito");
-    await axios.post("http://localhost:3000/submit-aplicacao", data);
-  } catch (error) {
-    console.error(error);
-    alert("Erro");
-  }
-  console.log(data);
-}
+
 async function handleSubmit(e) {
   console.log("deu certo");
   e.preventDefault();
 
-  const formData = Object.fromEntries(new FormData(form).entries());
+  const formData = new FormData(form);
+  const muscleRows = document.querySelectorAll("#tableBody tr");
 
   const data = Object.fromEntries(formData.entries());
 
-  if (!data) {
-    alert("Preencha o campo");
-    return;
-  }
   if (
     document.querySelector("input[name='classe']:checked").value === "outro"
   ) {
@@ -340,17 +307,35 @@ async function handleSubmit(e) {
       data.administracao.push(outroValor);
     }
   }
-  console.log("OBJ FINAL:", data);
-  console.log("ANTES DO POST");
+  data.aplicacoes = Array.from(muscleRows).map((row) => {
+    const regiao = row.querySelector(".muscle-name").textContent;
+    const gravidadeInfeccao = row.querySelector(
+      "select[name='gravidadeInfeccao']",
+    ).value;
+    const numeroDePontos = row.querySelector(
+      "input[name='numeroDePontos']",
+    ).value;
+    const volumePorPonto = row.querySelector(
+      "input[name='volumePorPonto']",
+    ).value;
+    const volumeTotal = row.querySelector("input[name='volumeTotal']").value;
+    const unidades = row.querySelector("input[name='unidades']").value;
+    const paralisia = row.querySelector("select[name='paralisia']").value;
+
+    return {
+      regiao,
+      gravidadeInfeccao,
+      numeroDePontos,
+      volumePorPonto,
+      volumeTotal,
+      unidades,
+      paralisia,
+    };
+  });
   try {
-    await axios.post("http://localhost:3000/submit-form", data);
+    console.log("DATA FINAL:", JSON.stringify(data, null, 2));
     alert("Feito");
-    form.reset();
-    const tableRows = document.querySelectorAll("#table-body tr");
-    tableRows.forEach((row) => {
-      row.remove();
-    });
-    return data;
+    await axios.post("http://localhost:3000/submit-form", data);
   } catch (error) {
     console.error(error);
     alert("Erro");

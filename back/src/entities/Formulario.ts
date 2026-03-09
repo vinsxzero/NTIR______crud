@@ -5,12 +5,11 @@ import {
   ManyToOne,
   OneToMany,
 } from "typeorm";
-import { v4 } from "uuid";
 import { Aplicacao } from "./aplicacao";
 @Entity("formulario")
 class Formulario {
-  @PrimaryGeneratedColumn({ name: "id_formulario" })
-  id: string = v4();
+  @PrimaryGeneratedColumn("uuid", { name: "id_formulario" })
+  id: string;
   @Column()
   nome: string;
   @Column()

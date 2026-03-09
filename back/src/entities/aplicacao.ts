@@ -1,6 +1,7 @@
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -27,6 +28,7 @@ class Aplicacao {
   @Column()
   paralisia: string;
   @ManyToOne(() => Formulario, (formulario) => formulario.aplicacoes)
+  @JoinColumn({ name: "id_formulario" })
   formulario: Formulario;
 }
 export { Aplicacao };
