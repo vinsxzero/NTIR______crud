@@ -36,7 +36,7 @@
         </p>
       </div>
       <hr />
-      <form action="/submit-form" method="post">
+      <form action="/submit-form" id="formularioEntries" method="post">
         <h2 class="input-title">Dados do profissional</h2>
         <hr />
 
@@ -157,7 +157,7 @@
 
         <div class="input-group full">
           <label>Sexo:</label>
-          <select id="sexo" name="sex">
+          <select id="sex" name="sex">
             <option value="male">Masculino</option>
             <option value="female">Feminino</option>
           </select>
@@ -387,14 +387,7 @@
             >Se sim, houve queixa de ineficácia terapêutica pelo outro
             paciente?</label
           >
-          <label
-            ><input
-              type="radio"
-              name="queixa"
-              id="queixa"
-              value="sim"
-            />Sim</label
-          >
+          <label><input type="radio" name="queixa" value="sim" />Sim</label>
           <label
             ><input type="radio" name="queixa" id="" value="nao" />Não</label
           >
@@ -489,140 +482,19 @@
           <label>Foi utilizado anestésico local? Se sim, especificar: *</label>
           <input type="text" id="anestesia" name="anestesia" />
         </div>
-
-        <div class="full">
-          <p>
-            De acordo com os músculos descritos na imagem abaixo, por gentileza
-            preencher a tabela a seguir as informações referentes a todos os
-            músculos onde foram realizadas aplicações.
-            <strong>
-              Atenção para os campos de
-              <u> volume</u>
-              , que devem ser preenchidos em
-              <u> ml </u>
-              .</strong
-            >
-          </p>
-          <div class="base-app-container">
-            <img src="./images/base-aplicação.png" alt="" />
-            <button type="button" class="muscle-btn" data-muscle="1" id="one">
-              1
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="2" id="two">
-              2
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="3" id="three">
-              3
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="4" id="four">
-              4
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="5" id="five">
-              5
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="6" id="six">
-              6
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="7" id="seven">
-              7
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="8" id="eight">
-              8
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="9" id="nine">
-              9
-            </button>
-            <button type="button" class="muscle-btn" data-muscle="10" id="ten">
-              10
-            </button>
-            <button
-              type="button"
-              class="muscle-btn"
-              data-muscle="11"
-              id="eleven"
-            >
-              11
-            </button>
-            <button
-              type="button"
-              class="muscle-btn"
-              data-muscle="12"
-              id="twelve"
-            >
-              12
-            </button>
-            <button
-              type="button"
-              class="muscle-btn"
-              data-muscle="13"
-              id="thirteen"
-            >
-              13
-            </button>
-            <button
-              type="button"
-              class="muscle-btn"
-              data-muscle="14"
-              id="fourteen"
-            >
-              14
-            </button>
-            <button
-              type="button"
-              class="muscle-btn"
-              data-muscle="15"
-              id="fifteen"
-            >
-              15
-            </button>
-            <button
-              type="button"
-              class="muscle-btn"
-              data-muscle="16"
-              id="sixteen"
-            >
-              16
-            </button>
-            <button
-              type="button"
-              class="muscle-btn"
-              data-muscle="17"
-              id="seventeen"
-            >
-              17
-            </button>
-          </div>
-        </div>
-        <div class="grid-item full" id="applicationForm">
-          <div class="table-container">
-            <table>
-              <caption>
-                *Preencha apenas as regiões em que foram realizadas aplicações*
-              </caption>
-              <thead>
-                <tr>
-                  <th>Região</th>
-                  <th>Gravidade da indicação</th>
-                  <th>Número de pontos</th>
-                  <th>Volume por ponto (ml)</th>
-                  <th>Volume total (ml)</th>
-                  <th>Número de unidades (U)</th>
-                  <th>Houve paralisia da musculatura?</th>
-                </tr>
-              </thead>
-              <tbody id="tableBody"></tbody>
-            </table>
-          </div>
-        </div>
+        <!-- <div class="input-group full">
+          <button type="submit" id="submitForm">Enviar</button>
+        </div> -->
 
         <div class="input-group full">
-          <button type="submit" id="submit-form">Enviar</button>
+          <button type="submit" id="submitApp">Enviar Formulario</button>
         </div>
       </form>
     </div>
+    <!-- <button id="myButton">botao me clique</button> -->
+    <script src="/js/aplicacao.js"></script>
+    <script src="/js/formulario.js"></script>
     <script src="./functions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/formulario.js"></script>
-    <script src="/js/aplicacao.js"></script>
   </body>
 </html>

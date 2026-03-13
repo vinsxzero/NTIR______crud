@@ -1,89 +1,77 @@
 //configurações gerais de tabela
-const muscleMap = {
-  1: "M. Frontal (direito)",
-  2: "M. Frontal (esquerdo)",
-  3: "M. Corrugador (direito)",
-  4: "M. Corrugador (esquerdo)",
-  5: "M. Prócero",
-  6: "M. orbicular do olho (direito)",
-  7: "M. orbicular do olho (esquerdo)",
-  8: "M. nasal",
-  9: "M. masseter (direito)",
-  10: "M. masseter (esquerdo)",
-  11: "M. orbicular da boca",
-  12: "M. platisma (direito)",
-  13: "M. platisma (esquerdo)",
-  14: "M. depressor do ângulo da boca (direito)",
-  15: "M. depressor do ângulo da boca (esquerdo)",
-  16: "M. mentual(direito)",
-  17: "M. mentual(esquerdo)",
-};
+// const muscleMap = {
+//   1: "M. Frontal (direito)",
+//   2: "M. Frontal (esquerdo)",
+//   3: "M. Corrugador (direito)",
+//   4: "M. Corrugador (esquerdo)",
+//   5: "M. Prócero",
+//   6: "M. orbicular do olho (direito)",
+//   7: "M. orbicular do olho (esquerdo)",
+//   8: "M. nasal",
+//   9: "M. masseter (direito)",
+//   10: "M. masseter (esquerdo)",
+//   11: "M. orbicular da boca",
+//   12: "M. platisma (direito)",
+//   13: "M. platisma (esquerdo)",
+//   14: "M. depressor do ângulo da boca (direito)",
+//   15: "M. depressor do ângulo da boca (esquerdo)",
+//   16: "M. mentual(direito)",
+//   17: "M. mentual(esquerdo)",
+// };
+const url = "http://localhost:3000/";
+
+// const tableBody = document.getElementById("tableBody");
+
+// document.querySelectorAll(".muscle-btn").forEach((button) => {
+//   button.addEventListener("click", () => addRow(button));
+// });
+//definindo constantes para os campos do formulário
 
 //adicionando linhas na tabela
-const tableBody = document.getElementById("tableBody");
 
-document.querySelectorAll(".muscle-btn").forEach((button) => {
-  button.addEventListener("click", () => addRow(button));
-});
+// function addRow(button) {
+//   const muscleId = button.dataset.muscle;
+//   const muscleName = muscleMap[muscleId];
 
-function addRow(button) {
-  const muscleId = button.dataset.muscle;
-  const muscleName = muscleMap[muscleId];
+//   if (document.querySelector(`tr[data-row="${muscleId}"]`)) return;
 
-  if (document.querySelector(`tr[data-row="${muscleId}"]`)) return;
+//   const row = document.createElement("tr");
+//   row.setAttribute("data-row", muscleId);
+//   row.innerHTML = `<td  class="muscle-name" name="regiao">${muscleName}</td>
+//                   <td>
+//                     <select name="gravidadeInfeccao">
+//                       <option>Selecione</option>
+//                       <option>Leve</option>
+//                       <option>Moderada</option>
+//                       <option>Grave</option>
+//                     </select>
+//                   </td>
+//                   <td><input name="numeroDePontos" type="number" min="0" /></td>
+//                   <td><input name="volumePorPonto" type="number" min="0" step="0.01" /></td>
+//                   <td><input name="volumeTotal" type="number" min="0" step="0.01" /></td>
+//                   <td><input name="unidades" type="number" min="0" /></td>
+//                   <td>
+//                     <select name="paralisia">
+//                       <option>Selecione</option>
+//                       <option>Sim</option>
+//                       <option>Não</option>
+//                     </select>
+//                   </td>
+//                   <td><button type="button"class="trash"><i class="bi bi-trash"></i></button></td>
+//                   `;
+//   row.querySelector(".trash").addEventListener("click", () => rmvRow(row));
+//   tableBody.appendChild(row);
+// }
 
-  const row = document.createElement("tr");
-  row.setAttribute("data-row", muscleId);
-  row.innerHTML = `<td  class="muscle-name">${muscleName}</td>
-                  <td>
-                    <select name="gravidadeInfeccao">
-                      <option>Selecione</option>
-                      <option>Leve</option>
-                      <option>Moderada</option>
-                      <option>Grave</option>
-                    </select>
-                  </td>
-                  <td><input name="numeroDePontos" type="number" min="0" /></td>
-                  <td><input name="volumePorPonto" type="number" min="0" step="0.01" /></td>
-                  <td><input name="volumeTotal" type="number" min="0" step="0.01" /></td>
-                  <td><input name="unidades" type="number" min="0" /></td>
-                  <td>
-                    <select name="paralisia">
-                      <option>Selecione</option>
-                      <option>Sim</option>
-                      <option>Não</option>
-                    </select>
-                  </td>
-                  <td><button type="button"class="trash"><i class="bi bi-trash"></i></button></td>
-                  `;
-  row.querySelector(".trash").addEventListener("click", () => rmvRow(row));
-  tableBody.appendChild(row);
-}
-
-function rmvRow(row) {
-  row.remove();
-}
+// function rmvRow(row) {
+//   row.remove();
+// }
 // adicionando campo "outro" a conselho de classe
 const radioInputConselho = document.querySelectorAll(
   "input[type='radio'][name='classe']",
 );
 const inputOutroConselho = document.getElementById("outroclasse");
 function addInputConselho() {
-  //selecionando os inputs da classe conselho
-  // let selected;
-  // radioInputConselho.forEach((radio) => {
-  //   if (radio.checked) {
-  //     selected = radio.value;
-  //   }
-  //   if (selected === "outro") {
-  //     inputOutroConselho.style.display = "block";
-  //     inputOutroConselho.setAttribute("required", "");
-  //   } else {
-  //     inputOutroConselho.style.display = "none";
-  //     inputOutroConselho.removeAttribute("required", "");
-  //   }
-  // });
-  // console.log(selected);
   const selected = document.querySelector("input[name='classe']:checked");
   if (!selected) return;
   if (selected.value === "outro") {
@@ -241,74 +229,10 @@ adminRouteCheckbox.forEach((checkbox) => {
 });
 const form = document.querySelector("#formularioEntries");
 const table = document.querySelector("#applicationForm");
-
-async function handleSubmit(e) {
-  console.log("deu certo");
-  e.preventDefault();
-
-  const formData = new FormData(form);
+function addApplication() {
   const muscleRows = document.querySelectorAll("#tableBody tr");
-
-  const data = Object.fromEntries(formData.entries());
-
-  if (
-    document.querySelector("input[name='classe']:checked").value === "outro"
-  ) {
-    const outroValor = document.getElementById("outroclasse").value.trim();
-    if (!outroValor) {
-      alert("Preencha o campo 'Outro Conselho de Classe'");
-      return;
-    }
-    data.classe = outroValor;
-  }
-  if (
-    document.querySelector("input[name='medicamento']:checked").value ===
-    "outro"
-  ) {
-    data.medicamento = document.getElementById("outroMedicamento").value;
-  }
-  if (
-    document.querySelector("input[name='doencasassociadas']:checked").value ===
-    "outro"
-  ) {
-    data.doencasassociadas = document.getElementById("outraDoenca").value;
-  }
-  if (
-    document.querySelector("input[name='volumeConstituicao']:checked").value ===
-    "outro"
-  ) {
-    data.volumeConstituicao = document.getElementById("outroVolume").value;
-  }
-  if (
-    document.querySelector("input[name='diluenteUtilizado']:checked").value ===
-    "outro"
-  ) {
-    data.diluenteUtilizado = document.getElementById("outroDiluente").value;
-  }
-
-  data.indicacao = formData.getAll("indicacao");
-  if (data.indicacao.includes("outro")) {
-    const outroValor = document.getElementById("otherindicacao").value;
-
-    if (outroValor) {
-      data.indicacao = data.indicacao.filter((item) => item !== "outro");
-      data.indicacao.push(outroValor);
-    }
-  }
-
-  data.administracao = formData.getAll("administracao");
-  if (data.administracao.includes("outro")) {
-    const outroValor = document.getElementById("otherAdminRoute").value;
-
-    if (outroValor) {
-      data.administracao = data.administracao.filter(
-        (item) => item !== "outro",
-      );
-      data.administracao.push(outroValor);
-    }
-  }
-  data.aplicacoes = Array.from(muscleRows).map((row) => {
-    const regiao = row.querySelector(".muscle-name").textContent;
+  forEach(muscleRows, (row) => {
+    const regiao = row.querySelector("td[name='regiao']").textContent;
     const gravidadeInfeccao = row.querySelector(
       "select[name='gravidadeInfeccao']",
     ).value;
@@ -321,8 +245,8 @@ async function handleSubmit(e) {
     const volumeTotal = row.querySelector("input[name='volumeTotal']").value;
     const unidades = row.querySelector("input[name='unidades']").value;
     const paralisia = row.querySelector("select[name='paralisia']").value;
-
-    return {
+    let arrayAplicacoes = [];
+    let aplicacao = {
       regiao,
       gravidadeInfeccao,
       numeroDePontos,
@@ -332,14 +256,8 @@ async function handleSubmit(e) {
       paralisia,
     };
   });
-  try {
-    console.log("DATA FINAL:", JSON.stringify(data, null, 2));
-    alert("Feito");
-    await axios.post("http://localhost:3000/submit-form", data);
-  } catch (error) {
-    console.error(error);
-    alert("Erro");
-    console.log(data);
-  }
+  arrayAplicacoes.push(aplicacao);
+
+  console.log(JSON.stringify(arrayAplicacoes, null, 2));
+  return JSON.stringify(arrayAplicacoes);
 }
-form.addEventListener("submit", handleSubmit);

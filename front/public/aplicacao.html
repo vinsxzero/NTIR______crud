@@ -1,4 +1,4 @@
-<!-- <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,12 +15,12 @@
       integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <title>RELATO DE SUSPEITA DE INEFETIVIDADE TERAPÊUTICA - NABOTA</title>
   </head>
   <body>
     <div class="form">
-      <form action="/test" method="post">
+      <form id="appForm" method="post">
         <div class="full">
           <p>
             De acordo com os músculos descritos na imagem abaixo, por gentileza
@@ -35,7 +35,7 @@
             >
           </p>
           <div class="base-app-container">
-            <img src="./images/base-aplicação.png" alt="" />
+            <img src="/images/base-aplicação.png" alt="" />
             <button type="button" class="muscle-btn" data-muscle="1" id="one">
               1
             </button>
@@ -141,7 +141,7 @@
                   <th>Houve paralisia da musculatura?</th>
                 </tr>
               </thead>
-              <tbody id="table-body"></tbody>
+              <tbody id="tableBody"></tbody>
             </table>
           </div>
         </div>
@@ -150,10 +150,7 @@
         </div>
       </form>
     </div>
-    <script src="./functions.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/formulario.js"></script>
     <script src="/js/aplicacao.js"></script>
-    <script src="../js/test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
-</html> -->
+</html>
