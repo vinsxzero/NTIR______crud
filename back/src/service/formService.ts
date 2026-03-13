@@ -5,8 +5,9 @@ class FormService {
   async createForm(formData: IFormInterface) {
     const formRepository = getCustomRepository(FormRepository);
     const form = formRepository.create(formData);
-    await formRepository.save(form);
-    return form;
+    const savedForm = await formRepository.save(form);
+
+    return savedForm;
   }
 }
 

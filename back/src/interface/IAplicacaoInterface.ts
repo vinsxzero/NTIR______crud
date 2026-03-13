@@ -15,6 +15,6 @@ interface IAplicacaoInterface {
 
   paralisia: string;
 
-  formularioId: string;
+  formularioId?: string;
 }
 export { IAplicacaoInterface };

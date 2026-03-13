@@ -28,7 +28,7 @@ class Aplicacao {
   @Column()
   paralisia: string;
   @ManyToOne(() => Formulario, (formulario) => formulario.aplicacoes)
-  @JoinColumn({ name: "id_formulario" })
+  @JoinColumn({ name: "formularioId" })
   formulario: Formulario;
 }
 export { Aplicacao };
