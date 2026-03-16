@@ -4,11 +4,30 @@ import { Request, Response } from "express";
 
 class ApplicationController {
   async create(req: Request, res: Response) {
-    const data = req.body;
-
+    const {
+      regiao,
+      gravidadeInfeccao,
+      numeroDePontos,
+      volumePorPonto,
+      volumeTotal,
+      unidades,
+      paralisia,
+    } = req.body;
+    const formularioId = req.params.formularioId;
+    const data = {
+      regiao,
+      gravidadeInfeccao,
+      numeroDePontos,
+      volumePorPonto,
+      volumeTotal,
+      unidades,
+      paralisia,
+      formularioId,
+    };
     const applicationService = new ApplicationService();
-    const result = await applicationService.create(data);
-    return res.json(result);
+
+    await applicationService.create(data);
+    return data;
   }
 }
 

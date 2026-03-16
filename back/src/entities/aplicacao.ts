@@ -27,7 +27,10 @@ class Aplicacao {
   unidades: number;
   @Column()
   paralisia: string;
-  @ManyToOne(() => Formulario, (formulario) => formulario.aplicacoes)
+  @ManyToOne(() => Formulario, (formulario) => formulario.aplicacoes, {
+    nullable: true,
+    onDelete: "SET NULL",
+  })
   @JoinColumn({ name: "formularioId" })
   formulario: Formulario;
 }

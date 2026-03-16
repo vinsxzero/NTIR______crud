@@ -4,6 +4,7 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   OneToMany,
+  JoinColumn,
 } from "typeorm";
 import { Aplicacao } from "./aplicacao";
 @Entity("formulario")
@@ -75,6 +76,6 @@ class Formulario {
   @OneToMany(() => Aplicacao, (aplicacao) => aplicacao.formulario, {
     cascade: true,
   })
-  aplicacoes: Aplicacao[];
+  aplicacoes: Aplicacao;
 }
 export { Formulario };

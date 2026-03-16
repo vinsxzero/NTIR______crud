@@ -34,6 +34,6 @@ interface IFormInterface {
 
   assepsia: string;
   anestesia: string;
-  aplicacoes: IAplicacaoInterface[];
+  aplicacoes: IAplicacaoInterface;
 }
 export { IFormInterface };
