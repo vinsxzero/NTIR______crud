@@ -18,14 +18,13 @@ async function handleSubmit(e) {
     data.classe = outroValor;
   }
   if (
-    document.querySelector("input[name='medicamento']:checked").value ===
-    "outro"
+    document.querySelector("input[name='medicamento']:checked").value === "sim"
   ) {
     data.medicamento = document.getElementById("outroMedicamento").value;
   }
   if (
     document.querySelector("input[name='doencasassociadas']:checked").value ===
-    "outro"
+    "sim"
   ) {
     data.doencasassociadas = document.getElementById("outraDoenca").value;
   }

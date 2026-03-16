@@ -86,39 +86,54 @@ const tableApp = document.getElementById("tableBody");
 //     }
 //   }
 // }
+
 async function addApplication(e) {
   e.preventDefault();
-  const baseData = Object.fromEntries(new FormData(formApp).entries());
+
   const muscleRows = document.querySelectorAll("#tableBody tr");
-  const idForm = window.location.pathname.split("/").pop();
+
   for (const row of muscleRows) {
+    const regiao = row.querySelector(".muscle-name").value;
+    const gravidadeInfeccao = row.querySelector(
+      "select[name='gravidadeInfeccao']",
+    ).value;
+    const numeroDePontos = row.querySelector(
+      "input[name='numeroDePontos']",
+    ).value;
+    const volumePorPonto = row.querySelector(
+      "input[name='volumePorPonto']",
+    ).value;
+    const volumeTotal = row.querySelector("input[name='volumeTotal']").value;
+    const unidades = row.querySelector("input[name='unidades']").value;
+    const paralisia = row.querySelector("select[name='paralisia']").value;
+
     const data = {
-      ...baseData,
-      regiao: row.querySelector(".muscle-name").value,
-      gravidadeInfeccao: row.querySelector("select[name='gravidadeInfeccao']")
-        .value,
-      numeroDePontos: row.querySelector("input[name='numeroDePontos']").value,
-      volumePorPonto: row.querySelector("input[name='volumePorPonto']").value,
-      volumeTotal: row.querySelector("input[name='volumeTotal']").value,
-      unidades: row.querySelector("input[name='unidades']").value,
-      paralisia: row.querySelector("select[name='paralisia']").value,
-      formularioId: idForm,
+      regiao,
+      gravidadeInfeccao,
+      numeroDePontos,
+      volumePorPonto,
+      volumeTotal,
+      unidades,
+      paralisia,
     };
 
-    console.log(data);
-
     try {
-      alert("Enviando dados...");
-      await axios.post(`/submit-application`, data);
+      await axios.post(
+        `/insert-application/${window.location.pathname.split("/").pop()}`,
+        data,
+      );
     } catch (error) {
       console.error(error);
-      alert("Erro");
     }
   }
+  alert("Enviando dados...");
+  window.location.href = "/success";
 }
+
 const submitButton = document.getElementById("submit-form");
+
 submitButton.addEventListener("click", async (e) => {
-  await addApplication();
+  await addApplication(e);
 });
 document.querySelectorAll(".muscle-btn").forEach((button) => {
   button.addEventListener("click", () => addRow(button));
