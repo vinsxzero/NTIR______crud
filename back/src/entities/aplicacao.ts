@@ -19,7 +19,7 @@ class Aplicacao {
   gravidadeInfeccao: string;
   @Column()
   numeroDePontos: number;
-  @Column()
+  @Column({ type: "double", precision: 10, scale: 2 })
   volumePorPonto: number;
   @Column()
   volumeTotal: number;
