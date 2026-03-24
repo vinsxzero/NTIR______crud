@@ -1,9 +1,9 @@
+const formu = document.getElementById("formularioEntries");
 async function handleSubmit(e) {
   console.log("deu certo");
-  const form = document.getElementById("formularioEntries");
   //   e.preventDefault();
 
-  const formData = new FormData(form);
+  const formData = new FormData(formu);
 
   const data = Object.fromEntries(formData.entries());
 
@@ -61,18 +61,14 @@ async function handleSubmit(e) {
       );
       data.administracao.push(outroValor);
     }
-  }
-  alert("Feito");
-  try {
-    await axios.post("http://localhost:3000/submit-form", data);
-  } catch (error) {
-    console.error(error);
-    alert("Erro");
-    console.log(data);
+    try {
+      axios.post("/submit-form", data);
+    } catch (err) {
+      console.error("Erro ao enviar os dados:", err);
+    }
   }
 }
 
-const myButton = document.getElementById("submitApp");
-myButton.addEventListener("click", () => {
-  handleSubmit();
+formu.addEventListener("submit", (e) => {
+  handleSubmit(e);
 });

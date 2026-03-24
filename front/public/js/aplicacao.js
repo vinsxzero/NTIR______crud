@@ -49,7 +49,7 @@ function addRow(button) {
                       <option>Não</option>
                     </select>
                   </td>
-                  <td><button type="button"class="trash"><i class="bi bi-trash"></i></button></td>
+                  <td class="remove"><button type="button"class="trash"><i class="bi bi-trash"></i></button></td>
                   `;
   row.querySelector(".trash").addEventListener("click", () => rmvRow(row));
   tableBody.appendChild(row);
@@ -60,32 +60,6 @@ function rmvRow(row) {
 }
 const formApp = document.getElementById("appForm");
 const tableApp = document.getElementById("tableBody");
-// async function addApplication(e) {
-//   e.preventDefault();
-
-//   const muscleRows = document.querySelectorAll("#tableBody tr");
-//   for (const row of muscleRows) {
-//     const data = {
-//       regiao: row.querySelector(".muscle-name").textContent,
-//       gravidadeInfeccao: row.querySelector("select[name='gravidadeInfeccao']")
-//         .value,
-//       numeroDePontos: row.querySelector("input[name='numeroDePontos']").value,
-//       volumePorPonto: row.querySelector("input[name='volumePorPonto']").value,
-//       volumeTotal: row.querySelector("input[name='volumeTotal']").value,
-//       unidades: row.querySelector("input[name='unidades']").value,
-//       paralisia: row.querySelector("select[name='paralisia']").value,
-//       formularioId: window.location.pathname.split("/").pop(),
-//     };
-
-//     console.log(JSON.stringify(data, null, 2));
-//     try {
-//       await axios.post(`/submit-application`, data);
-//     } catch (error) {
-//       console.error(error);
-//       alert("Erro");
-//     }
-//   }
-// }
 
 async function addApplication(e) {
   e.preventDefault();
